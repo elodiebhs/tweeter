@@ -6,4 +6,15 @@ header {
   align-items: center;
   justify-content: center;
   background-color: orange;
+  background-image: url("https://www.transparenttextures.com/patterns/ag-square.png");
+}
+
+.username h2{
+font-weight: 300;
+font-family: 'Source Sans Pro', sans-serif; 
+margin: 0;
+}
+
+.username span{
+  font-weight: 600;
 }
