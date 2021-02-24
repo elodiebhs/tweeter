@@ -9,18 +9,23 @@
     
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap" rel="stylesheet">
+
+    
     
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/css/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/css/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/css/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/css/tweet-feed.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/45657b9c84.js" crossorigin="anonymous"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
@@ -28,7 +33,11 @@
     
     <nav>
       <span>tweeter</span>
-      <div><strong>Write</strong> a new tweet</div>
+      <div>
+        <strong>Write</strong> a new tweet
+        <span class="arrow"><i class="fas fa-angle-double-right"></i></span>
+       
+      </div>
     </nav>
 
   <header>
@@ -48,15 +57,36 @@
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets/">
           <div class= "input">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
           </div>
           <div class="button-container">
-
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+      </section>
+
+      <!-- New tweet -->
+      <section id="tweet-container">
+        <article class=tweet-feed>
+          <header class="tweet-header">
+            <div class= "user">
+              <img src="/images/profile-hex.png"> 
+             <span class="user-name"> Elodie Bouthors</span>
+            </div>
+             <span class="user-ID"> @ElodieB</span>
+          </header>
+          <p>This is my Tweet</p>
+          <footer class="tweet-footer">
+            <p> 4 days ago</p> 
+            <div class="emoji">
+              <i class="fas fa-flag"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="fas fa-heart"></i>
+            </div>
+          </footer>
+        </article>
       </section>
     </main>
   </body>
