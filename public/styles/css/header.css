@@ -7,6 +7,7 @@ body>header {
   justify-content: center;
   background-color: orange;
   background-image: url("https://www.transparenttextures.com/patterns/ag-square.png");
+  margin-top:7.5rem;
 }
 
 .username h2{
