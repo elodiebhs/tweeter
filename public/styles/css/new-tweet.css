@@ -56,3 +56,7 @@ button{
 .counter {
   font-family: 'Bungee', cursive, sans-serif;
 }
+
+.counterRed {
+  color: red;
+}
