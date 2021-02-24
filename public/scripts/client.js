@@ -36,7 +36,7 @@ const tweetData = [
   }
 ]
 
-
+//Create the HTML for a tweet
 const createTweetElement = (tweet) => {
   
   let $tweet = $(`<article class="tweet-feed">
@@ -64,9 +64,10 @@ const createTweetElement = (tweet) => {
   return $tweet
 }
 
+//Lopp through the tweets ans appends the container with tweets
 const renderTweets = function(tweets) {
   // loops through tweets
-  for (let element of tweetData ){
+  for (let element of tweets){
     // calls createTweetElement for each tweet
     const result = createTweetElement(element);
     $('#tweet-container').append(result)
@@ -74,7 +75,7 @@ const renderTweets = function(tweets) {
   
 }
   // takes return value and appends it to the tweets container
-  renderTweets()
+  //renderTweets()
 
   /*
 
@@ -84,5 +85,42 @@ const $tweet = createTweetElement(tweetData);
 console.log($tweet); // to see what it looks like
 //$('#tweet-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
 */
+  //Write a function actually submit the data.
+  $('#submittweet').on('click',function(event){
+    event.preventDefault();
+    let tweetText = $("#tweet-text").val();
+    let tweetData = {
+      text: tweetText,
+    };
+    $.ajax({
+      method: 'POST',
+      url: '/tweets',
+      data: tweetData,
+      success:function(result){
+        //console.log("The post was successful");
+        getAllTweets();
+      },
+      error: function(err){
+        console.log("There was an error in the ajax call",err);
+      }
+    });
+  });
+
+  function getAllTweets(){
+    $.ajax({
+      method: 'GET',
+      url: '/tweets',
+      success:function(result){
+        //console.log("The tweets fetched ",result);
+        renderTweets(result);
+      },
+      error: function(err){
+        console.log("There was an error in the ajax call",err);
+      }
+    });
+  }
+
+  //We are going to call this function
+  getAllTweets();
 
 });
