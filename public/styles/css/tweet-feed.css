@@ -6,9 +6,9 @@
   background-color: #f4f1ec;
   padding: 1rem
 }
+
 .user img{
   width: 4rem;
-  
 }
 
 .user{
@@ -19,7 +19,7 @@
 
 .user-ID{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   color: rgb(165, 151, 164);
   font-size: 1.2rem;
@@ -39,12 +39,24 @@ p{
   padding: 1em;
 }
 .tweet-feed:hover {
-  -webkit-box-shadow: 10px 10px 19px 11px rgb(160, 146, 159);
-  -moz-box-shadow: 10px 10px 19px 11px rgb(160, 146, 159);
-  box-shadow: 10px 10px 19px 11px rgb(160, 146, 159);
+  -webkit-box-shadow: 7px 7px 0px 0px rgb(160, 146, 159);
 }
+/*box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];*/
 
 .tweet-footer{
   border-top: black solid 2px;
   font-size: 0.8em;
+  position: relative;
+}
+
+.emoji{
+  position: absolute;
+  top: 15.36px;
+  right: 1.5rem;
+  color: darkblue;
+}
+
+.emoji > i:hover {
+  color: blue;
+  transition: color 0.5s linear;
 }
