@@ -35,7 +35,7 @@ const createTweetElement = (tweet) => {
   return $tweet
 }
 
-//Lopp through the tweets ans appends the container with tweets
+//Lopp through the tweets and appends the container with tweets
 const renderTweets = function(tweets) {
   $('#tweet-container').empty()
   // loops through tweets
@@ -68,7 +68,7 @@ loadtweets()
       //if text is too long show a message error
       } else if (!tweetText.length || !tweetText) {
         alert("Please submit a tweet");
-        
+
       } else {
 
     $.ajax({
