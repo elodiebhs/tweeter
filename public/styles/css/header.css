@@ -5,9 +5,9 @@ body>header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: orange;
+  background-color: #F2913D;
   background-image: url("https://www.transparenttextures.com/patterns/ag-square.png");
-  margin-top:7.5rem;
+  margin-top:5.5rem;
 }
 
 .username h2{

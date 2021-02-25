@@ -2,7 +2,8 @@ nav {
   font-family: 'Bungee', cursive, sans-serif;
   height: 120px;
   width: 100%;
-  background-color: #4056A1;
+  background-color: #F2913D;
+  background-image: url("https://www.transparenttextures.com/patterns/ag-square.png");
   color: #FFFFFF;
   display : flex;
   justify-content: space-between;
