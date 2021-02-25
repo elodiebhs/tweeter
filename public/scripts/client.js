@@ -12,6 +12,13 @@ $( document ).ready(function() {
 //Create the HTML for a tweet
 const createTweetElement = (tweet) => {
   
+  //Preventing XSS with Escaping
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
   let $tweet = $(`<article class="tweet-feed">
   
   <header class="tweet-header">
@@ -21,7 +28,7 @@ const createTweetElement = (tweet) => {
     </div>
       <span class="user-ID"> ${tweet.user.handle}</span>
   </header>
-    <p>${tweet.content.text}</p>
+    <p>${escape(tweet.content.text)}</p>
   <footer class="tweet-footer">
     <p> ${tweet.created_at}</p> 
       <div class="emoji">
@@ -45,6 +52,7 @@ const renderTweets = function(tweets) {
     $('#tweet-container').prepend(result)
   }
 }
+//$("<div>").text(textFromUser);
 
 //loads tweets from the server using AJAX - use AJAX to fetch (GET) data from the server.
 const loadtweets = function() {
