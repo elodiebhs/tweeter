@@ -23,14 +23,16 @@
   align-items: center;
   color: rgb(165, 151, 164);
   font-size: 1.2rem;
+ 
 }
 
 p{
   padding-left: 1rem;
   padding-right: 1rem;
+  word-break: break-word;
 }
 .tweet-feed{
-  width: 30em;
+  width: 90%;
   border: 2px solid black;
   display: flex;
   flex-direction: column;
@@ -41,6 +43,7 @@ p{
 .tweet-feed:hover {
   -webkit-box-shadow: 7px 7px 0px 0px rgb(160, 146, 159);
 }
+
 /*box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];*/
 
 .tweet-footer{

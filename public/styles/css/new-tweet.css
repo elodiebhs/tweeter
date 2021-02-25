@@ -2,7 +2,8 @@
 section.new-tweet{
   display: flex;
   flex-direction: column;
-  width: 27em;
+  width: 100%;
+  padding: 2em;
 }
 
 .new-tweet h2 { 
@@ -25,9 +26,9 @@ form {
   display: flex;
   flex-direction: column;
   height: 8em;
-  width: 90%;
+  width: 100%;
   justify-content: center;
-  align-self: center;
+
 }
 
 div.input{ 
