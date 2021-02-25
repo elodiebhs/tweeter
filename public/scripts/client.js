@@ -9,14 +9,11 @@
 //A page can't be manipulated safely until the document is "ready."
 $( document ).ready(function() {
   
-
-
 //Create the HTML for a tweet
 const createTweetElement = (tweet) => {
   
   let $tweet = $(`<article class="tweet-feed">
   
-
   <header class="tweet-header">
     <div class= "user">
       <img src=${tweet.user.avatars}> 
@@ -35,7 +32,6 @@ const createTweetElement = (tweet) => {
   </footer>
   </article>`);
        
-
   return $tweet
 }
 
@@ -48,7 +44,6 @@ const renderTweets = function(tweets) {
     const result = createTweetElement(element);
     $('#tweet-container').prepend(result)
   }
-  
 }
 
 //loads tweets from the server using AJAX - use AJAX to fetch (GET) data from the server.
@@ -60,24 +55,22 @@ const loadtweets = function() {
 }
 loadtweets()
 
-  // takes return value and appends it to the tweets container
-  //renderTweets()
-
-  /*
-
-const $tweet = createTweetElement(tweetData);
-
-// Test / driver code (temporary)
-console.log($tweet); // to see what it looks like
-//$('#tweet-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
-*/
   //Write a function actually submit the data.
   $('#submittweet').on('click',function(event) {
     event.preventDefault();
     let tweetText = $("#tweet-text").val();
     let tweetData = {
-      text: tweetText,
+      text: tweetText, 
     };
+      //if text is too long show a message error
+      if (tweetText.length > 140) {
+        alert("Your tweet is too long");
+      //if text is too long show a message error
+      } else if (!tweetText.length || !tweetText) {
+        alert("Please submit a tweet");
+        
+      } else {
+
     $.ajax({
       method: 'POST',
       url: '/tweets',
@@ -90,6 +83,7 @@ console.log($tweet); // to see what it looks like
         console.log("There was an error in the ajax call",err);
       }
     });
+    }
   });
 
 });

@@ -2,7 +2,7 @@
 //test that it is being loaded into the index.html file correctly.
 $(document).ready(function() {
   
-  $("#tweet-text").on('keypress', function() {
+  $("#tweet-text").on('keydown', function() {
     //Calculating the num of Character length minus the max allowed
     const numOfCharacters=$(this).val().length;
     const remainCharacters = 140 - numOfCharacters;
