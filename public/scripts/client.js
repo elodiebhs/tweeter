@@ -66,16 +66,22 @@ loadtweets()
   //Write a function actually submit the data.
   $('#submittweet').on('click',function(event) {
     event.preventDefault();
+    
+    //this is deleting the error message if there is one
+    $('.error-message').empty();
+
     let tweetText = $("#tweet-text").val();
     let tweetData = {
       text: tweetText, 
     };
       //if text is too long show a message error
       if (tweetText.length > 140) {
-        alert("Your tweet is too long");
+        $('.error-message').append("Your tweet is too long");
+        $('error-message').slideDown("slow");
       //if text is too long show a message error
       } else if (!tweetText.length || !tweetText) {
-        alert("Please submit a tweet");
+        $('.error-message').append("Please enter a tweet");
+        $('.error-message').slideDown("slow");
 
       } else {
 

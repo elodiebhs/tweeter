@@ -11,6 +11,16 @@ section.new-tweet{
   align-self: center;
 }
 
+.new-tweet .error-message{
+  border: 5px solid red;
+  color: red;
+  padding:1rem 0rem;
+  margin: 1rem 0rem;
+  text-align: center;
+  display: none;
+}
+
+
 form { 
   display: flex;
   flex-direction: column;
