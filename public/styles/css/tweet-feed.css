@@ -63,6 +63,6 @@ p{
 }
 
 .emoji > i:hover {
-  color: blue;
-  transition: color 0.5s linear;
+  color: rgb(66, 188, 197);
+  transition: color 0.1s linear;
 }
