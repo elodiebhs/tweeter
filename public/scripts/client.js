@@ -7,19 +7,19 @@
 
 
 //A page can't be manipulated safely until the document is "ready."
-$( document ).ready(function() {
+$(document).ready(function() {
   
-//Create the HTML for a tweet
-const createTweetElement = (tweet) => {
+  //Create the HTML for a tweet
+  const createTweetElement = (tweet) => {
   
-  //Preventing XSS with Escaping
-  const escape =  function(str) {
-    let div = document.createElement('div');
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
-  }
+    //Preventing XSS with Escaping
+    const escape =  function(str) {
+      let div = document.createElement('div');
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    };
 
-  let $tweet = $(`<article class="tweet-feed">
+    let $tweet = $(`<article class="tweet-feed">
   
   <header class="tweet-header">
     <div class= "user">
@@ -39,29 +39,28 @@ const createTweetElement = (tweet) => {
   </footer>
   </article>`);
        
-  return $tweet
-}
+    return $tweet;
+  };
 
-//Lopp through the tweets and appends the container with tweets
-const renderTweets = function(tweets) {
-  $('#tweet-container').empty()
-  // loops through tweets
-  for (let element of tweets) {
-    // calls createTweetElement for each tweet
-    const result = createTweetElement(element);
-    $('#tweet-container').prepend(result)
-  }
-}
-//$("<div>").text(textFromUser);
+  //Lopp through the tweets and appends the container with tweets
+  const renderTweets = function(tweets) {
+    $('#tweet-container').empty();
+    // loops through tweets
+    for (let element of tweets) {
+      // calls createTweetElement for each tweet
+      const result = createTweetElement(element);
+      $('#tweet-container').prepend(result);
+    }
+  };
 
-//loads tweets from the server using AJAX - use AJAX to fetch (GET) data from the server.
-const loadtweets = function() {
+  //loads tweets from the server using AJAX - use AJAX to fetch (GET) data from the server.
+  const loadtweets = function() {
   //$.get(URL,callback);
- $.get('/tweets', function(tweets) {
-   renderTweets(tweets);
- })
-}
-loadtweets()
+    $.get('/tweets', function(tweets) {
+      renderTweets(tweets);
+    });
+  }
+  loadtweets();
 
   //Write a function actually submit the data.
   $('#submittweet').on('click',function(event) {
@@ -72,24 +71,24 @@ loadtweets()
 
     let tweetText = $("#tweet-text").val();
     let tweetData = {
-      text: tweetText, 
+      text: tweetText,
     };
       //if text is too long show a message error
-      if (tweetText.length > 140) {
-        $('.error-message').append("Your tweet is too long");
-        $('error-message').slideDown("slow");
-      //if text is too long show a message error
-      } else if (!tweetText.length || !tweetText) {
-        $('.error-message').append("Please enter a tweet");
-        $('.error-message').slideDown("slow");
+    if (tweetText.length > 140) {
+      $('.error-message').append("Your tweet is too long");
+      $('error-message').slideDown("slow");
+    //if text is too long show a message error
+    } else if (!tweetText.length || !tweetText) {
+      $('.error-message').append("Please enter a tweet");
+      $('.error-message').slideDown("slow");
 
-      } else {
+    } else {
 
-    $.ajax({
-      method: 'POST',
-      url: '/tweets',
-      data: tweetData,
-      success:function(result) {
+      $.ajax({
+        method: 'POST',
+        url: '/tweets',
+        data: tweetData,
+        success:function(result) {
         //console.log("The post was successful");
         loadtweets();
       },
