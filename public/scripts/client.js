@@ -76,7 +76,7 @@ $(document).ready(function() {
       //if text is too long show a message error
     if (tweetText.length > 140) {
       $('.error-message').append("Your tweet is too long");
-      $('error-message').slideDown("slow");
+      $('.error-message').slideDown("slow");
     //if text is too long show a message error
     } else if (!tweetText.length || !tweetText) {
       $('.error-message').append("Please enter a tweet");
@@ -93,6 +93,9 @@ $(document).ready(function() {
           $('#tweet-text').val("");
           //reset counter after tweet
           $('.counter').text('140');
+          //remove alert
+          $('.error-message').slideUp();
+
           //console.log("The post was successful");
           loadtweets();
         },
