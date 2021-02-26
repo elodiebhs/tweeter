@@ -6,20 +6,18 @@
     align-items: flex-start;
     margin-top: 5rem;
   }
+  
   nav {
     background-color: #4056A1;
     background-image: url("https://www.transparenttextures.com/patterns/ag-square.png");
   }
+  
   body>header {
     width: 33.3%;
     margin-left: 5rem;
-
   }
 
   .main.countainer {
     width: 56.7%;
-    
   }
-
-  
 }

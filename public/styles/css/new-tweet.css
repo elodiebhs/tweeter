@@ -28,7 +28,6 @@ form {
   height: 8em;
   width: 100%;
   justify-content: center;
-
 }
 
 div.input{ 
@@ -42,7 +41,6 @@ textarea{
   background: none;
   resize: none;
   margin-top: 0.5em;
- 
 }
 
 .button-container{
