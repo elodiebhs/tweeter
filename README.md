@@ -19,6 +19,8 @@ In this app we practice  HTML, CSS, JS, jQuery and AJAX front-end skills, and th
 4. Go to <http://localhost:8080/> in your browser.
 
 #### Dependencies
-
+- body-parser
+- chance
+- md5
 - Express
 - Node 5.10.x or above
