@@ -30,7 +30,7 @@ $(document).ready(function() {
   </header>
     <p>${escape(tweet.content.text)}</p>
   <footer class="tweet-footer">
-    <p> ${tweet.created_at}</p> 
+    <p> ${moment(tweet.created_at).fromNow()}</p> 
       <div class="emoji">
         <i class="fas fa-flag"></i>
         <i class="fas fa-retweet"></i>
