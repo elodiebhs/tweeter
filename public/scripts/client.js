@@ -89,6 +89,7 @@ $(document).ready(function() {
         url: '/tweets',
         data: tweetData,
         success:function(result) {
+         $('#tweet-text').val(""); 
         //console.log("The post was successful");
         loadtweets();
       },
