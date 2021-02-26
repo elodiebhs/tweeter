@@ -91,6 +91,7 @@ $(document).ready(function() {
         success:function(result) {
           //clearing textarea after tweet
           $('#tweet-text').val("");
+          //reset counter after tweet
           $('.counter').text('140');
           //console.log("The post was successful");
           loadtweets();
