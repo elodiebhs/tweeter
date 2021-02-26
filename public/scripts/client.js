@@ -100,6 +100,11 @@ loadtweets()
     }
   });
 
+  $('#new-button-tweet').on('click',function(event) {
+    event.preventDefault();
+    $('#tweet-text').focus();
+
+  });
 });
 
 
