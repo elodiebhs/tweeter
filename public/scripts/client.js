@@ -89,7 +89,9 @@ $(document).ready(function() {
         url: '/tweets',
         data: tweetData,
         success:function(result) {
+          //clearing textarea after tweet
           $('#tweet-text').val("");
+          $('.counter').text('140');
           //console.log("The post was successful");
           loadtweets();
         },
