@@ -6,7 +6,8 @@ In this app we practice  HTML, CSS, JS, jQuery and AJAX front-end skills, and th
 
 ## Final Project
 
-!['final product'] (https://github.com/elodiebhs/tweeter/blob/master/public/images/final%20product.png?raw=true)
+!['final product'](public/images/final.png)
+!['final product'](public/images/final-product.png)
 
 
 
