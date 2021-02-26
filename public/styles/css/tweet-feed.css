@@ -23,7 +23,8 @@
   align-items: center;
   color: rgb(165, 151, 164);
   font-size: 1.2rem;
- 
+  opacity: 0;
+  
 }
 
 p{
@@ -43,8 +44,10 @@ p{
 .tweet-feed:hover {
   -webkit-box-shadow: 7px 7px 0px 0px rgb(160, 146, 159);
 }
-
 /*box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];*/
+.tweet-feed:hover .user-ID{
+  opacity: 1;
+}
 
 .tweet-footer{
   border-top: black solid 2px;
