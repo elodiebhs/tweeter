@@ -59,7 +59,7 @@ $(document).ready(function() {
     $.get('/tweets', function(tweets) {
       renderTweets(tweets);
     });
-  }
+  };
   loadtweets();
 
   //Write a function actually submit the data.
@@ -89,14 +89,14 @@ $(document).ready(function() {
         url: '/tweets',
         data: tweetData,
         success:function(result) {
-         $('#tweet-text').val(""); 
-        //console.log("The post was successful");
-        loadtweets();
-      },
-      error: function(err) {
-        console.log("There was an error in the ajax call",err);
-      }
-    });
+          $('#tweet-text').val("");
+          //console.log("The post was successful");
+          loadtweets();
+        },
+        error: function(err) {
+          console.log("There was an error in the ajax call",err);
+        }
+      });
     }
   });
 
