@@ -53,7 +53,7 @@ $(document).ready(function() {
     }
   };
 
-  //loads tweets from the server using AJAX - use AJAX to fetch (GET) data from the server.
+  //Loads tweets from the server using AJAX - use AJAX to fetch (GET) data from the server.
   const loadtweets = function() {
   //$.get(URL,callback);
     $.get('/tweets', function(tweets) {
@@ -66,18 +66,19 @@ $(document).ready(function() {
   $('#submittweet').on('click',function(event) {
     event.preventDefault();
     
-    //this is deleting the error message if there is one
+    //Deleting the error message if there is one
     $('.error-message').empty();
 
     let tweetText = $("#tweet-text").val();
     let tweetData = {
       text: tweetText,
     };
-      //if text is too long show a message error
+      //If text is too long show a message error
     if (tweetText.length > 140) {
       $('.error-message').append("Your tweet is too long");
       $('.error-message').slideDown("slow");
-    //if text is too long show a message error
+
+    //If text is too long show a message error
     } else if (!tweetText.length || !tweetText) {
       $('.error-message').append("Please enter a tweet");
       $('.error-message').slideDown("slow");
@@ -89,14 +90,13 @@ $(document).ready(function() {
         url: '/tweets',
         data: tweetData,
         success:function(result) {
-          //clearing textarea after tweet
+          //Clearing textarea after tweet
           $('#tweet-text').val("");
-          //reset counter after tweet
+          //Reset counter after tweet
           $('.counter').text('140');
-          //remove alert
+          //Remove alert
           $('.error-message').slideUp();
 
-          //console.log("The post was successful");
           loadtweets();
         },
         error: function(err) {

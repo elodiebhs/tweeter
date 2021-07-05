@@ -1,5 +1,5 @@
 
-//test that it is being loaded into the index.html file correctly.
+//Test that it is being loaded into the index.html file correctly.
 $(document).ready(function() {
   
   $("#tweet-text").on('keydown', function() {
